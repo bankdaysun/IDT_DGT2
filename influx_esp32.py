@@ -32,13 +32,13 @@ def on_message(client, userdata, msg):
         print(f"Received: {topic} → {payload}")
 
         if topic == "______/sensor/ldr":
-            point = Point("topic1").tag("sensor", "ldr").field("value", payload)
+            point = Point("esp32 device").tag("sensor", "ldr").field("value", payload)
 
         elif topic == "______/sensor/temp":
-            point = Point("topic2").tag("sensor", "temp").field("value", payload)
+            point = Point("esp32 device").tag("sensor", "temp").field("value", payload)
 
         elif topic == "______/sensor/humid":
-            point = Point("topic3").tag("sensor", "humid").field("value", payload)
+            point = Point("esp32 device").tag("sensor", "humid").field("value", payload)
 
         else:
             print("Unknown topic:", topic)
