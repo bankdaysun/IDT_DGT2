@@ -117,7 +117,7 @@ void mqttCallback(char* topic, byte* payload, unsigned int length) {
 // Publish Sensor Data
 void publishSensorData() {
   static unsigned long lastSensorMillis = 0;
-  const unsigned long interval = 5000;
+  const unsigned long interval = 1000;
   if (millis() - lastSensorMillis >= interval) {
     lastSensorMillis = millis();
 
@@ -145,7 +145,7 @@ void publishSensorData() {
 // Publish Heartbeat
 void publishHeartbeat() {
   static unsigned long lastHeartbeat = 0;
-  const unsigned long hbInterval = 15000; // ทุก 15 วิ
+  const unsigned long hbInterval = 10000; // ทุก 15 วิ
   if (millis() - lastHeartbeat >= hbInterval) {
     lastHeartbeat = millis();
     String msg = "ESP32 is alive!";
